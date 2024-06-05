@@ -17,7 +17,7 @@ const Projects = () => {
           </div>
           <div className="w-full max-w-xl lg:w-3/4">
             <h2 className="text-2xl mb-4">{project.title}</h2>
-            <p className="text-lg mb-4">{project.description}</p>
+            <p className="text-lg mb-4 text-white">{project.description}</p>
             {project.technologies.map((tech, index) => (
               <span
                 key={index}
