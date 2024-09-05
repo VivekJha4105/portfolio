@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { DiRedis } from "react-icons/di";
-import { RiNodejsLine, RiReactjsLine } from "react-icons/ri";
+import { RiNodejsLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { SiDocker, SiMongodb } from "react-icons/si";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -19,16 +20,21 @@ const iconVariants = (duration) => ({
 
 const Technologies = () => {
   return (
-    <motion.section
-      whileInView={{ x: 0, opacity: 1 }}
-      initial={{ x: -100, opacity: 0 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-      className="border-b border-neutral-800 pb-16"
-    >
-      <h1 className="my-20 text-center font-bold text-2xl sm:text-3xl lg:text-4xl">
+    <section className="border-b border-neutral-800 pb-16">
+      <motion.h1
+        whileInView={{ y: 0, opacity: 1 }}
+        initial={{ y: -100, opacity: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="my-20 text-center font-bold text-2xl sm:text-3xl lg:text-4xl"
+      >
         Technologies
-      </h1>
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      </motion.h1>
+      <motion.div
+        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ x: -100, opacity: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="flex flex-wrap items-center justify-center gap-4"
+      >
         <motion.div
           variants={iconVariants(2.5)}
           initial="initial"
@@ -62,7 +68,7 @@ const Technologies = () => {
           <DiRedis className="text-7xl text-red-500" />
         </motion.div>
         <motion.div
-          variants={iconVariants(4.7)}
+          variants={iconVariants(2.7)}
           initial="initial"
           animate="animate"
           className="rounded-xl p-4 border-4 border-neutral-700"
@@ -70,15 +76,31 @@ const Technologies = () => {
           <SiDocker className="text-7xl text-sky-500" />
         </motion.div>
         <motion.div
-          variants={iconVariants(5)}
+          variants={iconVariants(1)}
+          initial="initial"
+          animate="animate"
+          className="rounded-xl p-4 border-4 border-neutral-700"
+        >
+          <RiTailwindCssFill className="text-7xl text-sky-600" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(1.6)}
+          initial="initial"
+          animate="animate"
+          className="rounded-xl p-4 border-4 border-neutral-700"
+        >
+          <TbBrandFramerMotion className="text-7xl text-purple-600" />
+        </motion.div>
+        <motion.div
+          variants={iconVariants(1.6)}
           initial="initial"
           animate="animate"
           className="rounded-xl p-4 border-4 border-neutral-700"
         >
           <BiLogoPostgresql className="text-7xl text-sky-700" />
         </motion.div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 
